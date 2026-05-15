@@ -342578,6 +342578,19 @@
       "explorerAddressLink": "https://tronscan.org/#/address/",
       "explorerTxLink": "https://tronscan.org/#/transaction/",
       "relatedAssetKey": null
+    },
+    "starknet:SN_MAIN/token:0x0787150e306e6eae6e3f79dea881770e8bbff2c1b8eb490f969669ee945b3135": {
+      "assetId": "starknet:SN_MAIN/token:0x0787150e306e6eae6e3f79dea881770e8bbff2c1b8eb490f969669ee945b3135",
+      "chainId": "starknet:SN_MAIN",
+      "name": "Starknet Bitcoin",
+      "symbol": "strkBTC",
+      "precision": 8,
+      "color": "#F7931A",
+      "icon": "https://serve.garden.finance/chain_images/strkb.png",
+      "explorer": "https://starkscan.co",
+      "explorerAddressLink": "https://starkscan.co/contract/",
+      "explorerTxLink": "https://starkscan.co/tx/",
+      "relatedAssetKey": "bip122:000000000019d6689c085ae165831e93/slip44:0"
     }
   },
   "ids": [
@@ -367725,6 +367738,7 @@
     "eip155:8453/erc20:0x236aa50979d5f3de3bd1eeb40e81137f22ab794b",
     "solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp/token:6DNSN2BJsaPFdFFc1zP37kkeNe4Usc1Sqkzr9C9vPWcU",
     "starknet:SN_MAIN/token:0x4daa17763b286d1e59b97c283c0b8c949994c361e426a28f743c67bdfe9a32f",
+    "starknet:SN_MAIN/token:0x0787150e306e6eae6e3f79dea881770e8bbff2c1b8eb490f969669ee945b3135",
     "sui:35834a8a/coin:0x77045f1b9f811a7a8fb9ebd085b5b0c55c5cb0d1520ff55f7037f89b5da9f5f1::TBTC::TBTC",
     "eip155:1/erc20:0x3a5dceb4bea8de0f0cde09d9f495ad5ebfe2b707",
     "eip155:1/erc20:0xae6ee608b297305abf3eb609b81febbb8f6a0bb3",

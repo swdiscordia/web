@@ -18,6 +18,8 @@ import { cowSwapper } from './swappers/CowSwapper/CowSwapper'
 import { cowApi } from './swappers/CowSwapper/endpoints'
 import { debridgeSwapper } from './swappers/DebridgeSwapper'
 import { debridgeApi } from './swappers/DebridgeSwapper/endpoints'
+import { gardenApi } from './swappers/GardenSwapper/endpoints'
+import { gardenSwapper } from './swappers/GardenSwapper/GardenSwapper'
 import { jupiterApi } from './swappers/JupiterSwapper/endpoints'
 import { jupiterSwapper } from './swappers/JupiterSwapper/JupiterSwapper'
 import { mayachainApi } from './swappers/MayachainSwapper/endpoints'
@@ -122,6 +124,10 @@ export const swappers: Record<SwapperName, (SwapperApi & Swapper) | undefined> =
     ...debridgeSwapper,
     ...debridgeApi,
   },
+  [SwapperName.Garden]: {
+    ...gardenSwapper,
+    ...gardenApi,
+  },
   [SwapperName.Test]: undefined,
 }
 
@@ -141,6 +147,9 @@ const DEFAULT_AVNU_SLIPPAGE_DECIMAL_PERCENTAGE = '0.02'
 const DEFAULT_STONFI_SLIPPAGE_DECIMAL_PERCENTAGE = '0.01'
 // deBridge API off-chain simulation overestimates output on some chains (e.g. SEI ~2.4%), so auto slippage (1%) is insufficient
 const DEFAULT_DEBRIDGE_SLIPPAGE_DECIMAL_PERCENTAGE = '0.03'
+// Garden returns binding quotes (slippage=0). We keep a small buffer at the
+// ShapeShift layer for downstream UX defaults / quote-staleness protection.
+const DEFAULT_GARDEN_SLIPPAGE_DECIMAL_PERCENTAGE = '0.005'
 
 export const getDefaultSlippageDecimalPercentageForSwapper = (
   swapperName: SwapperName | undefined,
@@ -183,6 +192,8 @@ export const getDefaultSlippageDecimalPercentageForSwapper = (
       return DEFAULT_AVNU_SLIPPAGE_DECIMAL_PERCENTAGE
     case SwapperName.Stonfi:
       return DEFAULT_STONFI_SLIPPAGE_DECIMAL_PERCENTAGE
+    case SwapperName.Garden:
+      return DEFAULT_GARDEN_SLIPPAGE_DECIMAL_PERCENTAGE
     default:
       return assertUnreachable(swapperName)
   }
